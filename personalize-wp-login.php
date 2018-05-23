@@ -63,15 +63,17 @@
     */
     function personalize_backend_scripts(){
 
-        wp_enqueue_scripts( 'personalize_backend_js_bootstrap', plugins_url( 'personalize-wp-login/js/bootstrap.min.js' ) );
+        wp_enqueue_script( 'personalize_backend_js_bootstrap', plugins_url( 'personalize-wp-login/js/bootstrap.min.js' ) );
+        wp_enqueue_script( 'personalize_backend_js_bootstrap', plugins_url( 'personalize-wp-login/js/media.js' ) );
 
     }
-    add_action( 'wp-enqueue_scripts', 'personalize_backend_scripts' );
+    add_action( 'admin_enqueue_scripts', 'personalize_backend_scripts' );
 
 
     add_action( 'admin_enqueue_scripts', 'mw_enqueue_color_picker' );
     function mw_enqueue_color_picker( $hook_suffix ) {
         // first check that $hook_suffix is appropriate for your admin page
         wp_enqueue_style( 'wp-color-picker' );
-        wp_enqueue_script( 'my-script-handle', plugins_url('personalize-wp-login/js/colors.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
+        wp_enqueue_script( 'my-script-handle', plugins_url('js/colors.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
     }
+

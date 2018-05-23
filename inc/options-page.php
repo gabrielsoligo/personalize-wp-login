@@ -63,13 +63,41 @@
 														<th scope="row"> 
 															<p>Background Image</p> 
 														</th> 
-														<td>Input image</td> 
+														<td>
+															        <div class='image-preview-wrapper'>
+															            <img id='image-preview' src='<?php echo wp_get_attachment_url( get_option( 'media_selector_attachment_id' ) ); ?>' height='100'>
+															        </div>
+															        <input id="upload_image_button" type="button" class="button" value="<?php _e( 'Upload image' ); ?>" />
+															        <input type='hidden' name='image_attachment_id' id='image_attachment_id' value='<?php echo get_option( 'media_selector_attachment_id' ); ?>'>
+															        
+														</td> 
 													</tr> 
 													<tr> 
 														<th scope="row"> 
 															<p>Background Position</p> 
 														</th> 
-														<td>Drop Down</td> 
+														<td>
+															<div class="btn-group">
+															  <button type="button" class="btn btn-default">Selecionar</button>
+															  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															    <span class="caret"></span>
+															    <span class="sr-only">Toggle Dropdown</span>
+															  </button>
+															  <ul class="dropdown-menu">
+															    <li><a href="#">left top</a></li>
+															    <li><a href="#">left center</a></li>
+															    <li><a href="#">left bottom</a></li>
+															    <li role="separator" class="divider"></li>
+															    <li><a href="#">right top</a></li>
+															    <li><a href="#">right center</a></li>
+															    <li><a href="#">tight bottom</a></li>
+															    <li role="separator" class="divider"></li>
+															    <li><a href="#">center top</a></li>
+															    <li><a href="#">center center</a></li>
+															    <li><a href="#">center bottom</a></li>
+															  </ul>
+															</div>
+														</td> 
 													</tr> 
 													<tr> 
 														<th scope="row"> 
